@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    public bool current;
-    public bool target;
-    public bool selectable;
-    public bool walkable;
+    public bool current = false;
+    public bool target = false;
+    public bool selectable = false;
+    public bool walkable = true;
 
     //needed for BFS
     public bool visited = false;

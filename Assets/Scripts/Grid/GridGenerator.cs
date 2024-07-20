@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GridGenerator : MonoBehaviour
 {
-    public int width, height, depth;
+    public int width, height;
     public GameObject tilePrefab;
     // Start is called before the first frame update
     void Start()
@@ -30,15 +30,12 @@ public class GridGenerator : MonoBehaviour
         {
             for (int y = 0; y < height; y++)
             {
-                for (int z = 0; z < depth; z++)
-                {
-                    //calculate the position for each cube
-                    Vector3 position = new Vector3(x, y, z);
-                    //Instantiate the cube at the calculated position
-                    GameObject newTile = Instantiate(tilePrefab, position, Quaternion.identity);
-                    newTile.transform.parent = transform;
-                    newTile.tag = "Tile";
-                }
+                //calculate the position for each cube
+                Vector3 position = new Vector3(x, 0, y);
+                //Instantiate the cube at the calculated position
+                GameObject newTile = Instantiate(tilePrefab, position, Quaternion.identity);
+                newTile.transform.parent = transform;
+                newTile.tag = "Tile";
             }
         }
     }
